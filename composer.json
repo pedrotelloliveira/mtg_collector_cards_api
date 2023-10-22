@@ -1,0 +1,22 @@
+{
+    "name": "pedro/mtg_collection_cards",
+    "description": "This websites serves the purpose to allow users to search the MTG database. They also have the possiblity to mark cards as owned, create wishlists and their own decks.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pedro Oliveira",
+            "email": "pedrotelloliveira@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6"
+    },
+		"autoload": {
+					"psr-4": {"MTG\\": "app/"},
+					"files": ["Config/config.php"]
+		}
+		
+}
