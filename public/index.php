@@ -18,7 +18,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 $app->post('/register', function (Request $request, Response $response, $args) {
 	$data = $request->getParsedBody();
-  $name = $data['name'];
+  $username = $data['username'];
   $email = $data['email'];
   $password = $data['password'];
   $password2 = $data['password2'];
@@ -30,7 +30,7 @@ $app->post('/register', function (Request $request, Response $response, $args) {
 
 	$db = new DatabaseConnection();
 	$query = $db->getConnection()->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
-	$query->bindParam(":username", $name);
+	$query->bindParam(":username", $username);
 	$query->bindParam(":email", $email);
 	$query->bindParam(":password", $password);
 	$result = $query->execute();
